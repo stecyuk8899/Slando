@@ -1,0 +1,25 @@
+﻿@model Slando_Olx.Entities.Product;
+@{
+    ViewData["Title"] = "Products";
+}
+<div class="card text-center">
+    <div class="card-header">
+        <ul class="nav nav-pills card-header-pills containerul">
+            <li class="nav-item">
+                <a class="nav-link bg-dark active" asp-controller="Home" asp-action="Index">Back</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link bg-dark active" asp-controller="Home" asp-route-id="@Model.Id" asp-action="Delete">Delete</a>
+            </li>
+        </ul>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">@Model.Title</h5>
+        <p class="card-text">@Model.Category</p>
+        <p>Price: <span class="badge bg-primary">@Model.Price$</span></p>
+        <p>City: @Model.City</p>
+        <p>@Model.ContactInformation.</p>
+        <p>Description: @Model.Description.</p>
+        <a href="#" class="btn btn-success">Buy</a>
+    </div>
+</div>

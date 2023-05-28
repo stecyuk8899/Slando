@@ -1,0 +1,23 @@
+﻿@model List<Slando_Olx.Entities.Product>;
+@{
+    ViewData["Title"] = "Products";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+</div>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    @foreach (var p in Model)
+    {
+        <div class="col">
+            <div class="card h-100 container-products">
+                <img src="@p.Image" class="card-img-top">
+                <div class="card-body text-center">
+                    <h5 class="card-title">@p.Title</h5>
+                    <p class="card-text">@p.Category <span class="badge bg-primary">@p.Price$</span></p>
+                    <a asp-controller="Home" asp-action="AddInform" asp-route-id="@p.Id" class="btn btn-outline-success">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
